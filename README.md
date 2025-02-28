@@ -10,3 +10,6 @@ pip install flask
 
 # Run the app
 python app.py
+
+
+link the logs catalog to Elite Dangerous logs. 

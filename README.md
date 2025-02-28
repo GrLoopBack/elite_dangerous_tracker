@@ -1,3 +1,6 @@
+WARNING - WORK IN PROGRESS. Code is written by Grok bot. 
+It's not currently working! 
+
 # elite_dangerous_tracker
 Tracks your materials you have bought and delivered for system colonisation
 

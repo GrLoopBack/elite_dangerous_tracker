@@ -6,7 +6,7 @@ Tracks your materials you have bought and delivered for system colonisation
 
 # Create and activate virtual environment
 python3 -m venv .venv
-source .venv/bin/activate  # Use 'source' instead of '.' for compatibility
+source .venv/bin/activate
 
 # Install Flask
 pip install flask

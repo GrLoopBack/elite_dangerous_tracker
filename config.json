@@ -1,0 +1,6 @@
+{
+    "log_directory": "/home/user/EliteDangerous/Logs",
+    "colonized_systems": [
+        {"name": "system full name here", "SystemAddress": full address as a number}
+    ]
+}

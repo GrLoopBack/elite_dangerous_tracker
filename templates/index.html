@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elite Dangerous Colonization Tracker</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .delivered { background-color: #e0ffe0; }
+        .sold { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>Colonization Supplies Tracker</h1>
+    <p>Last Scan: {{ last_scan or "Not scanned yet" }}</p>
+    
+    <h2>Upload Logs</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="log_files" multiple accept=".log">
+        <input type="submit" value="Upload and Process">
+    </form>
+
+    <h2>Purchases and Status</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Count</th>
+            <th>Bought At</th>
+            <th>Bought System</th>
+            <th>Bought Time</th>
+            <th>Delivered To</th>
+            <th>Delivered Time</th>
+            <th>Sold At</th>
+            <th>Sold Time</th>
+        </tr>
+        {% for purchase in purchases %}
+        <tr {% if purchase.delivered %}class="delivered"{% elif purchase.sold %}class="sold"{% endif %}>
+            <td>{{ purchase.item }}</td>
+            <td>{{ purchase.count }}</td>
+            <td>{{ purchase.bought_at }}</td>
+            <td>{{ purchase.bought_system }}</td>
+            <td>{{ purchase.bought_time }}</td>
+            <td>{{ purchase.delivered_to or "Not Delivered" }}</td>
+            <td>{{ purchase.delivered_time or "-" }}</td>
+            <td>{{ purchase.sold_at or "Not Sold" }}</td>
+            <td>{{ purchase.sold_time or "-" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

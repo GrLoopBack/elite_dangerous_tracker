@@ -11,7 +11,7 @@ pip install flask
 # Run the app
 python app.py
 
-#Edit config.json 
+# Edit config.json 
 
 link the logs catalog to Elite Dangerous logs. 
 Add your "home" system you are colonizing. 
